@@ -20,6 +20,16 @@ To get up and running quickly, check our [Quick Start for Minikube, OKD (OpenShi
 
 Documentation for the current _main_ branch as well as all releases can be found on our [website][strimzi].
 
+## How to install
+
+install strimzi kafka operator
+
+    kubectl create --filename install/cluster-operator --namespace kafka
+
+install kafka cluster
+
+    kubectl apply --filename examples/kafka/kraft/kafka-single-node.yaml -n kafka
+
 ## Roadmap
 
 The roadmap of the Strimzi Operator project is maintained as [GitHub Project](https://github.com/orgs/strimzi/projects/4).
