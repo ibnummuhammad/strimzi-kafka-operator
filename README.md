@@ -28,11 +28,11 @@ create namespace kafka
 
 install strimzi kafka operator
 
-    kubectl create --filename install/cluster-operator --namespace kafka
+    kubectl create --namespace kafka --filename install/cluster-operator
 
 install kafka cluster
 
-    kubectl apply --filename examples/kafka/kraft/kafka-single-node.yaml -n kafka
+    kubectl apply --namespace kafka --filename examples/kafka/kraft/kafka-single-node.yaml
 
 ## Roadmap
 
