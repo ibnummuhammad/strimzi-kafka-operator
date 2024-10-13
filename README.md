@@ -34,6 +34,14 @@ install kafka cluster
 
     kubectl apply --namespace kafka --filename examples/kafka/kraft/kafka-single-node.yaml
 
+create kafka producer
+
+    kubectl run kafka-producer --namespace kafka --stdin --tty --image=quay.io/strimzi/kafka:0.43.0-kafka-3.8.0 --rm=true --restart=Never -- bin/kafka-console-producer.sh --bootstrap-server my-cluster-kafka-bootstrap:9092 --topic my-topic
+
+create kafka consumer
+
+    kubectl run kafka-consumer --namespace kafka --stdin --tty --image=quay.io/strimzi/kafka:0.43.0-kafka-3.8.0 --rm=true --restart=Never -- bin/kafka-console-consumer.sh --bootstrap-server my-cluster-kafka-bootstrap:9092 --topic my-topic --from-beginning
+
 ## Roadmap
 
 The roadmap of the Strimzi Operator project is maintained as [GitHub Project](https://github.com/orgs/strimzi/projects/4).
