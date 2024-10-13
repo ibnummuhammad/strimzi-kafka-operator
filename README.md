@@ -22,6 +22,10 @@ Documentation for the current _main_ branch as well as all releases can be found
 
 ## How to install
 
+create namespace kafka
+
+    kubectl create namespace kafka
+
 install strimzi kafka operator
 
     kubectl create --filename install/cluster-operator --namespace kafka
